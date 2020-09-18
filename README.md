@@ -10,27 +10,21 @@ And ensure your RAM account has `AliyunDNSFullAccess` permission.
 
 
 ## Install
+安装
+以Archlinux及Aliyun-dns为例，首先安装certbot
 
-```bash
-pip install certbot-dns-aliyun
 ```
+sudo pacman -Sy certbot
+```
+然后手动安装cerbot-dns-aliyun(其他DNS供应商请到certbot官网查看对应dns插件)
 
-Or manually:
 ```bash
 git clone https://github.com/tengattack/certbot-dns-aliyun
 cd certbot-dns-aliyun
 sudo python setup.py install
 ```
-
-If you are using `certbot-auto`, you should run `virtualenv` first:
-
-```bash
-# CentOS 7
-virtualenv --no-site-packages --python "python2.7" "/opt/eff.org/certbot/venv"
-/opt/eff.org/certbot/venv/bin/python2.7 setup.py install
-```
-
 ## Credentials File
+设置Aliyun Api凭证
 
 ```ini
 certbot_dns_aliyun:dns_aliyun_access_key = 12345678
@@ -43,6 +37,7 @@ chmod 600 /path/to/credentials.ini
 
 
 ## Obtain Certificates
+获取证书
 
 ```bash
 certbot certonly -a certbot-dns-aliyun:dns-aliyun \
