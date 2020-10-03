@@ -26,11 +26,13 @@ sudo python setup.py install
 ## Credentials File
 设置Aliyun Api凭证
 
+新建一个`credencials.ini`文件并添加下面的内容
+
 ```ini
 certbot_dns_aliyun:dns_aliyun_access_key = 12345678
 certbot_dns_aliyun:dns_aliyun_access_key_secret = 1234567890abcdef1234567890abcdef
 ```
-
+修改文件权限
 ```bash
 chmod 600 /path/to/credentials.ini
 ```
